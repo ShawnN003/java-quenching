@@ -43,7 +43,21 @@ public class Practice {
      * @throws NullPointerException if words is null
      */
     public static String shortestWord(Set<String> words) {
-        return null;
+    String shortWord = "";
+
+    if(words == null || words.length == 0)
+    {
+        throw new NullPointerException;
+    }
+
+    for(word : words)
+    {
+        if(word.length < shortWord.length)
+        {
+            shortWord = word;
+        }
+    }
+    return shortWord;
     }
 
     /**
@@ -56,7 +70,18 @@ public class Practice {
      * @throws NullPointerException if ages is null
      */
     public static Set<String> adults(Map<String, Integer> ages) {
-        return null;
+    if(ages == null)
+    {
+        throw new NullPointerException;
+    }
+
+    for (String names : ages.keySet()) {
+        if(ages.get(names) >= 18)
+        {
+            grownUps.add(names);
+        }
+    }
+    return null;
     }
 
     /**
@@ -67,7 +92,21 @@ public class Practice {
      * @throws IllegalArgumentException if head is null
      */
     public static int biggestNumber(ListNode<Integer> head) {
-        return 0;
+    if(head = null)
+    {
+        throw new NullPointerException;
+    }
+    int bigNum = 0;
+    if(head != null)
+    {
+        if(head.data < bigNum)
+        {
+            bigNum = head.data;
+        }
+        head = head.next;
+    }
+
+    return 0;
     }
 
     /**
