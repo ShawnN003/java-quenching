@@ -198,10 +198,26 @@ public class Practice {
         int currentLevel = 1;
         int sum = 0;
         while(!queue.isEmpty()) {
-            
-        })
+            int size = queue.size();
+            for(int = 0; i < size; i++) {
+                BinaryTreeNode<Integer> node = queue.poll();
+                if(currentLevel == level) {
+                    sum += node.data;
+                }
+                if(node.left == null) {
+                    queue.add(node.left);
+                }
+                if(node.right == null) {
+                    queue.add(node.right);
+                }
+            }
+            if(currentLevel == level) {
+                return sum;
+            }
+            currentLevel++;
+        }
         return 0;
-    }
+        }
 
 
     /**
