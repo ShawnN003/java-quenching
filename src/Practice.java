@@ -252,13 +252,19 @@ public class Practice {
         return 0;
     }
 
-        public static int graphSum(Vertex<Integer> start, Set<Vertex<Integer>> visited) {
-            if(start == null)
-            {
-                return 0;
-            }
-
+    public static int graphSum(Vertex<Integer> node, Set<Vertex<Integer>> visited) {
+        if(node == null || visited.contains(node))
+        {
+            return 0;
         }
+        visited.add(node);
+        int sum = node.data;
+        for(Vertex<Integer> neighbor : node.getNeighbors())
+        {
+            graphSum(neighbor, visited);
+        }
+        return sum;
+    }
 
 
     /**
