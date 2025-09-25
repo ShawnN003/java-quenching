@@ -249,7 +249,7 @@ public class Practice {
             return 0;
         }
         Set<Vertex<Integer>> visited = new HashSet<>();
-        return 0;
+        return graphSum(start, visited);
     }
 
     public static int graphSum(Vertex<Integer> node, Set<Vertex<Integer>> visited) {
@@ -258,10 +258,11 @@ public class Practice {
             return 0;
         }
         visited.add(node);
+
         int sum = node.data;
         for(Vertex<Integer> neighbor : node.getNeighbors())
         {
-            graphSum(neighbor, visited);
+            sum+=graphSum(neighbor, visited);
         }
         return sum;
     }
