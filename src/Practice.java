@@ -188,10 +188,18 @@ public class Practice {
      * @return the sum of the nodes at the given level
      */
     public static int sumAtLevel(BinaryTreeNode<Integer> root, int level) {
+        
         if(root == null || level < 1)
         {
             return 0;
         }
+        Queue<BinaryTreeNode<Integer>> queue = new LinkedList<>();
+        queue.add(root);
+        int currentLevel = 1;
+        int sum = 0;
+        while(!queue.isEmpty()) {
+            
+        })
         return 0;
     }
 
