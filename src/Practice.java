@@ -72,7 +72,7 @@ public class Practice {
     public static Set<String> adults(Map<String, Integer> ages) {
     if(ages == null)
     {
-        throw new NullPointerException;
+        throw new NullPointerException("Head cannot be null");;
     }
 
     for (String names : ages.keySet()) {
@@ -92,21 +92,21 @@ public class Practice {
      * @throws IllegalArgumentException if head is null
      */
     public static int biggestNumber(ListNode<Integer> head) {
-    if(head = null)
+    if(head == null)
     {
-        throw new NullPointerException;
+        throw new IllegalArgumentException("Head cannot be null");;
     }
-    int bigNum = 0;
-    if(head != null)
+    int bigNum = head.data;
+    while(head != null)
     {
-        if(head.data < bigNum)
+        if(head.data > bigNum)
         {
             bigNum = head.data;
         }
         head = head.next;
     }
 
-    return 0;
+    return bigNum;
     }
 
     /**
