@@ -204,10 +204,10 @@ public class Practice {
                 if(currentLevel == level) {
                     sum += node.data;
                 }
-                if(node.left == null) {
+                if(node.left != null) {
                     queue.add(node.left);
                 }
-                if(node.right == null) {
+                if(node.right != null) {
                     queue.add(node.right);
                 }
             }
@@ -244,8 +244,22 @@ public class Practice {
      * @return the sum of all the vertices
      */
     public static int graphSum(Vertex<Integer> start) {
+        if(start == null)
+        {
+            return 0;
+        }
+        Set<Vertex<Integer>> visited = new HashSet<>();
         return 0;
     }
+
+        public static int graphSum(Vertex<Integer> start, Set<Vertex<Integer>> visited) {
+            if(start == null)
+            {
+                return 0;
+            }
+
+        }
+
 
     /**
      * Returns the count of vertices in a graph that have an outdegree of 0.
