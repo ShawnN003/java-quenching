@@ -153,6 +153,14 @@ public class Practice {
         {
             return 0;
         }
+        int left = levelCount(root.left);
+        int right = levelCount(root.right);
+        if (left > right) {
+            return left + 1;
+        } 
+        else {
+            return right + 1;
+        }
     }
 
 
