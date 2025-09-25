@@ -188,6 +188,10 @@ public class Practice {
      * @return the sum of the nodes at the given level
      */
     public static int sumAtLevel(BinaryTreeNode<Integer> root, int level) {
+        if(root == null || level < 1)
+        {
+            return 0;
+        }
         return 0;
     }
 
