@@ -123,7 +123,20 @@ public class Practice {
      * @return a frequency map of values in the list
      */
     public static <T> Map<T, Integer> frequencies(ListNode<T> head) {
-        return null;
+            Map<T, Integer> counts = new HashMap<>();
+            while(head != null)
+            {
+                if(counts.containsKey(head.data))
+                {
+                    counts.put(head.data, counts.get(head.data) + 1);
+                }
+                else
+                {
+                    counts.put(head.data, 1);
+                }
+                head = head.next;
+            }
+        return counts;
     }
 
 
