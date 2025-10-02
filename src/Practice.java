@@ -1,4 +1,8 @@
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.LinkedList;
 import java.util.Map;
+import java.util.Queue;
 import java.util.Set;
 
 public class Practice {
@@ -17,10 +21,6 @@ public class Practice {
         }
         int odds = 0;
 
-        if(nums == odds)
-        {
-            return 0;
-        }
         for(int i = 0; i<=nums.length; i++)
         {
             if(nums[i] % 2 != 0)
@@ -45,14 +45,14 @@ public class Practice {
     public static String shortestWord(Set<String> words) {
     String shortWord = "";
 
-    if(words == null || words.length == 0)
+    if(words == null || words.size() == 0)
     {
-        throw new NullPointerException;
+        throw new IllegalArgumentException("Not allowed");
     }
 
-    for(word : words)
+    for(var word : words)
     {
-        if(word.length < shortWord.length)
+        if(word.length() < shortWord.length())
         {
             shortWord = word;
         }
@@ -72,9 +72,9 @@ public class Practice {
     public static Set<String> adults(Map<String, Integer> ages) {
     if(ages == null)
     {
-        throw new NullPointerException("Head cannot be null");;
+        throw new NullPointerException("Head cannot be null");
     }
-
+    Set<String> grownUps = new HashSet<>();
     for (String names : ages.keySet()) {
         if(ages.get(names) >= 18)
         {
@@ -94,7 +94,7 @@ public class Practice {
     public static int biggestNumber(ListNode<Integer> head) {
     if(head == null)
     {
-        throw new IllegalArgumentException("Head cannot be null");;
+        throw new IllegalArgumentException("Head cannot be null");
     }
     int bigNum = head.data;
     while(head != null)
@@ -199,7 +199,7 @@ public class Practice {
         int sum = 0;
         while(!queue.isEmpty()) {
             int size = queue.size();
-            for(int = 0; i < size; i++) {
+            for(int i = 0; i < size; i++) {
                 BinaryTreeNode<Integer> node = queue.poll();
                 if(currentLevel == level) {
                     sum += node.data;
@@ -280,7 +280,7 @@ public class Practice {
         visited.add(node);
 
         int sum = node.data;
-        for(Vertex<Integer> neighbor : node.getNeighbors())
+        for(Vertex<Integer> neighbor : node.neighbors)
         {
             sum+=graphSum(neighbor, visited);
         }
